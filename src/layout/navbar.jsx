@@ -43,7 +43,7 @@ const Navbar = () => {
           <Button
             color="inherit"
             component={NavLink}
-            to="/scheme"
+            to="/services"
             className="navbar-button"
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
@@ -58,7 +58,7 @@ const Navbar = () => {
               },
             }}
           >
-            Scheme
+            Services
           </Button>
           <Button
             color="inherit"
@@ -99,6 +99,26 @@ const Navbar = () => {
             }}
           >
             Contact Us
+          </Button>
+          <Button
+            color="inherit"
+            component={NavLink}
+            to="/login"
+            className="navbar-button"
+            sx={{
+              fontFamily: "Urbanist, sans-serif !important",
+              textTransform: "none",
+              color: "black !important",
+              transition: "color 0.3s ease-in-out",
+              "&:hover": {
+                color: "#821BC3 !important",
+              },
+              "&.active": {
+                color: "#A61E20 !important", // Change active color to #A61E20
+              },
+            }}
+          >
+            Log In
           </Button>
         </Box>
         <Box>
