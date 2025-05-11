@@ -370,7 +370,6 @@ const services = [
           backgroundColor: "#fff",
         }}
       >
-        {/* Header Section */}
         <Typography
           variant="h4"
           fontWeight="bold"
@@ -389,7 +388,6 @@ const services = [
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </Typography>
 
-        {/* Grid Section */}
         <Grid container spacing={3} justifyContent="center">
           {services.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
@@ -406,7 +404,6 @@ const services = [
                 }}
               >
                 <CardContent>
-                  {/* Icon */}
                   <Box
                     sx={{
                       width: "50px",
@@ -422,7 +419,6 @@ const services = [
                     {service.icon}
                   </Box>
 
-                  {/* Title */}
                   <Typography
                     variant="h6"
                     fontWeight="bold"
@@ -431,7 +427,6 @@ const services = [
                     {service.title}
                   </Typography>
 
-                  {/* Description */}
                   <Typography
                     sx={{
                       color: "#555",
@@ -448,7 +443,17 @@ const services = [
           ))}
         </Grid>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 25, px: 30, marginTop:"100px", width:"100%", marginBottom:"150px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 25,
+          px: 30,
+          marginTop: "100px",
+          width: "100%",
+          marginBottom: "150px",
+        }}
+      >
         <Box>
           <Typography
             variant="h6"
@@ -462,7 +467,11 @@ const services = [
           </Typography>
           <Typography
             variant="h5"
-            sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif", width:"250px" }}
+            sx={{
+              fontWeight: "bold",
+              fontFamily: "Urbanist, sans-serif",
+              width: "250px",
+            }}
           >
             Satisfaction Score
           </Typography>

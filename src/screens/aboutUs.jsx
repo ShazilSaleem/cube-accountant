@@ -525,7 +525,6 @@ const testimonials = [
           marginTop: "50px",
         }}
       >
-        {/* Title */}
         <Typography
           variant="h4"
           fontWeight="bold"
@@ -534,7 +533,6 @@ const testimonials = [
           Testimonials
         </Typography>
 
-        {/* Subtitle */}
         <Typography
           sx={{
             color: "#555",
@@ -549,7 +547,6 @@ const testimonials = [
           opportunities with a leading accountancy firm.
         </Typography>
 
-        {/* Testimonials Container */}
         <Box
           sx={{
             display: "flex",
@@ -570,12 +567,10 @@ const testimonials = [
                 "&:hover": { boxShadow: 6 },
               }}
             >
-              {/* Avatar */}
               <Avatar sx={{ bgcolor: "#f3e5e5", mx: "auto", mb: 1 }}>
                 <Person sx={{ color: "#A61E20" }} />
               </Avatar>
 
-              {/* Name */}
               <Typography
                 fontWeight="bold"
                 sx={{ fontFamily: "urbanist, sans-serif" }}
@@ -583,7 +578,6 @@ const testimonials = [
                 {testimonial.name}
               </Typography>
 
-              {/* Feedback */}
               <Typography
                 sx={{
                   color: "#333",
@@ -595,7 +589,6 @@ const testimonials = [
                 {testimonial.feedback}
               </Typography>
 
-              {/* Star Rating */}
               <Box sx={{ mt: 2 }}>
                 {[...Array(5)].map((_, starIndex) =>
                   starIndex < testimonial.rating ? (
@@ -609,7 +602,6 @@ const testimonials = [
           ))}
         </Box>
 
-        {/* Progress Bar */}
         <Box
           sx={{
             width: "100%",
@@ -632,6 +624,7 @@ const testimonials = [
           />
         </Box>
       </Box>
+
       <Box
         sx={{
           display: "flex",
