@@ -40,7 +40,7 @@ function ContactUs() {
             display: "flex",
             alignSelf: "flex-start",
             flexDirection: "column",
-            marginLeft: "50px",
+            marginLeft: "220px",
             marginBottom: "25px",
           }}
         >
@@ -51,14 +51,11 @@ function ContactUs() {
               fontFamily: "Urbanist, sans-serif",
               gap: "15px",
               fontSize: "24px",
-              color: "#821BC3",
-              marginLeft: "0px",
+              color: "#A61E20",
             }}
           >
             <Arrow sx={{ color: "red", marginRight: 1 }} />
-            <Typography sx={{ color: "#A61E20", fontSize: "20px" }}>
-              Contact Info
-            </Typography>
+            Contact Info
           </Typography>
           <Typography
             sx={{
@@ -70,127 +67,128 @@ function ContactUs() {
             Our Contact Details
           </Typography>
         </div>
-        <img
-          src={Map}
-          alt="map"
-          style={{
-            height: "auto",
-            maxWidth: "1220px",
-            width: "100%",
-            objectFit: "contain",
-          }}
-        />
+        <Box sx={{ py: 8 }}>
+          <Grid
+            container
+            spacing={5}
+            alignItems="center"
+            justifyContent="center"
+            direction={{ xs: "column", md: "row" }}
+          >
+            <Grid item xs={12} md={6}>
+              <Grid container spacing={4} justifyContent="center">
+                <Grid item xs={12} sm={6} md={12}>
+                  <Box textAlign="center">
+                    <Box
+                      sx={{
+                        backgroundColor: "#A61E20",
+                        borderRadius: "50%",
+                        width: 50,
+                        height: 50,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        mx: "auto",
+                        mb: 1,
+                      }}
+                    >
+                      <LocationOnIcon sx={{ color: "white" }} />
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      fontWeight="bold"
+                      fontFamily="Urbanist, sans-serif"
+                    >
+                      Office Location
+                    </Typography>
+                    <Typography fontFamily="Urbanist, sans-serif" color="#555">
+                      Suite Twelve, First Floor, Parkway <br /> Two, Manchester,
+                      M14 7HR
+                    </Typography>
+                  </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={12}>
+                  <Box textAlign="center">
+                    <Box
+                      sx={{
+                        backgroundColor: "#A61E20",
+                        borderRadius: "50%",
+                        width: 50,
+                        height: 50,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        mx: "auto",
+                        mb: 1,
+                      }}
+                    >
+                      <PhoneIcon sx={{ color: "white" }} />
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      fontWeight="bold"
+                      fontFamily="Urbanist, sans-serif"
+                    >
+                      Phone Number
+                    </Typography>
+                    <Typography fontFamily="Urbanist, sans-serif" color="#555">
+                      Call: +44 0161 55 22 666 <br />
+                      <strong>WhatsApp:</strong> +44 0751 33 20 300
+                    </Typography>
+                  </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={12}>
+                  <Box textAlign="center">
+                    <Box
+                      sx={{
+                        backgroundColor: "#A61E20",
+                        borderRadius: "50%",
+                        width: 50,
+                        height: 50,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        mx: "auto",
+                        mb: 1,
+                      }}
+                    >
+                      <EmailIcon sx={{ color: "white" }} />
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      fontWeight="bold"
+                      fontFamily="Urbanist, sans-serif"
+                    >
+                      Email
+                    </Typography>
+                    <Typography fontFamily="Urbanist, sans-serif" color="#555">
+                      contact@cubeaccountants.com
+                    </Typography>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item xs={12} md={6}>
+              <Box textAlign="center">
+                <img
+                  src={Map}
+                  alt="map"
+                  style={{
+                    width: "600px",
+                    height: "450px",
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
       </div>
-      <Box sx={{ textAlign: "center" }}>
-        <Grid container justifyContent="center">
-          {/* Office Location */}
-          <Grid item xs={12} md={4}>
-            <Box display="flex" flexDirection="column" alignItems="center">
-              <Box
-                sx={{
-                  backgroundColor: "#A61E20",
-                  borderRadius: "50%",
-                  width: 50,
-                  height: 50,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <LocationOnIcon sx={{ color: "white" }} />
-              </Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: "bold",
-                  marginTop: 1,
-                  fontFamily: "Urbanist, sans-serif",
-                }}
-              >
-                Office Location
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ fontFamily: "Urbanist, sans-serif" }}
-              >
-                Suite Twelve, First Floor, Parkway <br /> Two, Manchester, M14
-                7HR
-              </Typography>
-            </Box>
-          </Grid>
-
-          {/* Phone Number */}
-          <Grid item xs={12} md={4}>
-            <Box display="flex" flexDirection="column" alignItems="center">
-              <Box
-                sx={{
-                  backgroundColor: "#A61E20",
-                  borderRadius: "50%",
-                  width: 50,
-                  height: 50,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <PhoneIcon sx={{ color: "white" }} />
-              </Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: "bold",
-                  marginTop: 1,
-                  fontFamily: "Urbanist, sans-serif",
-                }}
-              >
-                Phone Number
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ fontFamily: "Urbanist, sans-serif" }}
-              >
-                Call: +44 0161 55 22 666 <br />
-                <strong>WhatsApp:</strong> +44 0751 33 20 300
-              </Typography>
-            </Box>
-          </Grid>
-
-          {/* Email */}
-          <Grid item xs={12} md={4}>
-            <Box display="flex" flexDirection="column" alignItems="center">
-              <Box
-                sx={{
-                  backgroundColor: "#A61E20",
-                  borderRadius: "50%",
-                  width: 50,
-                  height: 50,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <EmailIcon sx={{ color: "white" }} />
-              </Box>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: "bold",
-                  marginTop: 1,
-                  fontFamily: "Urbanist, sans-serif",
-                }}
-              >
-                Email
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ fontFamily: "Urbanist, sans-serif" }}
-              >
-                contact@cubeaccountants.com
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
       <Box
         sx={{
           display: "flex",

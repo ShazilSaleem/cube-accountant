@@ -130,7 +130,7 @@ const testimonials = [
             <After />
           </Box>
           <Typography
-            color="#821BC3"
+            color="#A61E20"
             sx={{
               fontFamily: "Urbanist, sans-serif ",
               alignItems: "center",
@@ -270,7 +270,7 @@ const testimonials = [
                         cursor: "pointer",
                         border:
                           selectedImage === image
-                            ? "1px solid #821BC3"
+                            ? "1px solid #A61E20"
                             : "none",
                         borderRadius: "8px",
                       }}
@@ -359,7 +359,6 @@ const testimonials = [
           backgroundColor: "white",
         }}
       >
-        {/* Title */}
         <Typography
           variant="h4"
           sx={{ fontWeight: "bold", mb: 2, fontFamily: "Urbanist, sans-serif" }}
@@ -372,7 +371,6 @@ const testimonials = [
           </span>
         </Typography>
 
-        {/* Subtitle */}
         <Typography
           sx={{
             color: "#555",
@@ -385,7 +383,6 @@ const testimonials = [
           Designed to impeccably fulfill all your unique needs and requirements.
         </Typography>
 
-        {/* Values Container */}
         <Box
           sx={{
             display: "flex",

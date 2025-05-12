@@ -27,11 +27,12 @@ const Navbar = () => {
             className="navbar-button"
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
+              fontSize: "16px",
               textTransform: "none",
               color: "black !important",
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#821BC3 !important",
+                color: "#A61E20 !important",
               },
               "&.active": {
                 color: "#A61E20 !important", // Change active color to #A61E20
@@ -47,11 +48,12 @@ const Navbar = () => {
             className="navbar-button"
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
+              fontSize: "16px",
               textTransform: "none",
               color: "black !important",
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#821BC3 !important",
+                color: "#A61E20 !important",
               },
               "&.active": {
                 color: "#A61E20 !important", // Change active color to #A61E20
@@ -67,11 +69,12 @@ const Navbar = () => {
             className="navbar-button"
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
+              fontSize: "16px",
               textTransform: "none",
               color: "black !important",
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#821BC3 !important",
+                color: "#A61E20 !important",
               },
               "&.active": {
                 color: "#A61E20 !important", // Change active color to #A61E20
@@ -87,11 +90,12 @@ const Navbar = () => {
             className="navbar-button"
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
+              fontSize: "16px",
               textTransform: "none",
               color: "black !important",
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#821BC3 !important",
+                color: "#A61E20 !important",
               },
               "&.active": {
                 color: "#A61E20 !important", // Change active color to #A61E20
@@ -107,11 +111,12 @@ const Navbar = () => {
             className="navbar-button"
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
+              fontSize: "16px",
               textTransform: "none",
               color: "black !important",
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#821BC3 !important",
+                color: "#A61E20 !important",
               },
               "&.active": {
                 color: "#A61E20 !important", // Change active color to #A61E20
@@ -130,10 +135,11 @@ const Navbar = () => {
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
               textTransform: "none",
-              color: "#821BC3 !important",
+              color: "#A61E20 !important",
+              fontSize: "16px",
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#821BC3 !important",
+                color: "#A61E20 !important",
               },
               "&.active": {
                 color: "#A61E20 !important", // Change active color to #A61E20
@@ -149,11 +155,13 @@ const Navbar = () => {
             className="navbar-button"
             sx={{
               fontFamily: "Urbanist, sans-serif !important",
+              fontSize: "16px",
+
               textTransform: "none",
               color: "#2B82C0 !important",
               transition: "color 0.3s ease-in-out",
               "&:hover": {
-                color: "#821BC3 !important",
+                color: "#A61E20 !important",
               },
               "&.active": {
                 color: "#A61E20 !important", // Change active color to #A61E20

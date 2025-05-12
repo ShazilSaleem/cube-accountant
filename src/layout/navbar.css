@@ -30,7 +30,7 @@
 }
 
 .navbar-button:hover::after {
-  background-color: #821BC3;
+  background-color: #A61E20;
 }
 
 /* Scrolled State */
@@ -52,5 +52,5 @@
 }
 
 .navbar.scrolled .navbar-button:hover::after {
-  background-color: #821BC3;
+  background-color: #A61E20;
 }

@@ -39,50 +39,49 @@ import BuildingIcon from "../assets/buildingIcon.jsx";
 import LaptopIcon from "../assets/laptopIcon.jsx"
 import FolderIcon from "../assets/folderIcon.jsx"
 import RotateIcon from "../assets/rotateIcon.jsx";
-
-
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-
+  const navigate = useNavigate();
   const isDesktop = useMediaQuery("(max-width: 1497px)");
-const serviceIcons = {
-  Accounts: <AccountsIcon  />,
-  Audit: <AuditIcon  />,
-  "Business Advisory": <AdvisoryIcon  />,
-  Payroll: <PayrollIcon  />,
-};
-const services = [
-  {
-    title: "Healthcare",
-    icon: <HeadphonesIcon />,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
-  },
-  {
-    title: "Legal and Professional",
-    icon: <ChartIcon />,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
-  },
-  {
-    title: "Property and Construction",
-    icon: <BuildingIcon />,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
-  },
-  {
-    title: "Contractors and Freelancers",
-    icon: <LaptopIcon />,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
-  },
-  {
-    title: "Transport",
-    icon: <FolderIcon />,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
-  },
-  {
-    title: "Catering",
-    icon: <RotateIcon />,
-    desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
-  },
-];
+  const serviceIcons = {
+    Accounts: <AccountsIcon />,
+    Audit: <AuditIcon />,
+    "Business Advisory": <AdvisoryIcon />,
+    Payroll: <PayrollIcon />,
+  };
+  const services = [
+    {
+      title: "Healthcare",
+      icon: <HeadphonesIcon />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
+    },
+    {
+      title: "Legal and Professional",
+      icon: <ChartIcon />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
+    },
+    {
+      title: "Property and Construction",
+      icon: <BuildingIcon />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
+    },
+    {
+      title: "Contractors and Freelancers",
+      icon: <LaptopIcon />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
+    },
+    {
+      title: "Transport",
+      icon: <FolderIcon />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
+    },
+    {
+      title: "Catering",
+      icon: <RotateIcon />,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipis elit. Sit enim nec, proin faucibus nibh et sagittis a. Lacinia purus ac amet.",
+    },
+  ];
   return (
     <div>
       <Box
@@ -138,23 +137,10 @@ const services = [
           </Button>
         </Box>
         <Box sx={{ position: "relative", display: "inline-block" }}>
-          {/* Base Image */}
           <img
             src={TabImage}
             alt="tab image"
             style={{ width: "100%", display: "block" }}
-          />
-
-          {/* Overlay Image */}
-          <img
-            src={Mobile}
-            alt="mobile image"
-            style={{
-              position: "absolute",
-              top: "85%", // Adjust positioning
-              left: "30%",
-              transform: "translate(-50%, -50%)",
-            }}
           />
         </Box>
       </Box>
@@ -164,7 +150,8 @@ const services = [
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: "400px",
+          marginTop: "220px",
+          marginBottom: "200px",
           position: "relative",
         }}
       >
@@ -281,6 +268,9 @@ const services = [
           <Button
             variant="contained"
             endIcon={<ArrowForwardIcon />}
+            onClick={() => {
+              navigate("/services");
+            }}
             sx={{
               backgroundColor: "#A61E20",
               borderRadius: "8px",
@@ -366,10 +356,33 @@ const services = [
       <Box
         sx={{
           textAlign: "center",
-          padding: "60px 220px",
+          padding: "60px 240px",
           backgroundColor: "#fff",
+          position: "relative",
         }}
       >
+        <Box
+          sx={{
+            position: "absolute",
+            zIndex: 10,
+            top: -25,
+            left: "8%",
+            transform: "translateX(-50%)",
+          }}
+        >
+          <Before />
+        </Box>
+        <Box
+          sx={{
+            position: "absolute",
+            zIndex: 10,
+            top: 55,
+            left: "93%",
+            transform: "translateX(-50%)",
+          }}
+        >
+          <After />
+        </Box>
         <Typography
           variant="h4"
           fontWeight="bold"
