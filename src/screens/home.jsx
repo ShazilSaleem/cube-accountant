@@ -43,6 +43,14 @@ import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * The Home component renders the main home page of the application, which includes
+ * the navigation bar, hero section, features section, and footer.
+ *
+ * @returns {React.ReactElement} The JSX element representing the home page.
+ */
+/*******  1e3466ea-5533-48b8-bc30-dd8113b7145e  *******/
 function Home() {
   const navigate = useNavigate();
   const isDesktop = useMediaQuery("(max-width: 1497px)");
@@ -96,6 +104,7 @@ function Home() {
         sx={{
           display: "flex",
           flexDirection: "row",
+          justifyContent: "space-between",
           marginTop: "100px",
           gap: "20px",
           alignItems: "center",
