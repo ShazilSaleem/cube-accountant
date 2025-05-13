@@ -40,6 +40,8 @@ import LaptopIcon from "../assets/laptopIcon.jsx"
 import FolderIcon from "../assets/folderIcon.jsx"
 import RotateIcon from "../assets/rotateIcon.jsx";
 import { useNavigate } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
 function Home() {
   const navigate = useNavigate();
@@ -50,6 +52,12 @@ function Home() {
     "Business Advisory": <AdvisoryIcon />,
     Payroll: <PayrollIcon />,
   };
+
+  const { ref, inView } = useInView({
+    triggerOnce: true, // only trigger once
+    threshold: 0.3, // 30% of the element should be visible
+  });
+
   const services = [
     {
       title: "Healthcare",
@@ -457,6 +465,7 @@ function Home() {
         </Grid>
       </Box>
       <Box
+        ref={ref}
         sx={{
           display: "flex",
           alignItems: "center",
@@ -490,15 +499,13 @@ function Home() {
           </Typography>
         </Box>
 
-        {/* Stats Section */}
         <Grid container spacing={12} alignItems="center">
-          {/* First Stat */}
           <Grid item>
             <Typography
               variant="h4"
               sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
             >
-              500 +
+              {inView && <CountUp end={500} duration={2} />} +
             </Typography>
             <Typography
               sx={{
@@ -516,7 +523,7 @@ function Home() {
               variant="h4"
               sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
             >
-              120 M
+              {inView && <CountUp end={120} duration={2} />} M
             </Typography>
             <Typography
               sx={{
@@ -529,13 +536,12 @@ function Home() {
             </Typography>
           </Grid>
 
-          {/* Third Stat */}
           <Grid item>
             <Typography
               variant="h4"
               sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
             >
-              98 %
+              {inView && <CountUp end={98} duration={2} />} %
             </Typography>
             <Typography
               sx={{
