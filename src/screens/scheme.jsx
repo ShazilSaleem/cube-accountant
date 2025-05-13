@@ -31,29 +31,34 @@ import useMediaQuery from "../hooks/useMediaQuery.js";
 import BenefitCareousel from "../layout/benefitCareousel";
 import TabImage from "../assets/tabImage.png";
 import { Star, Shield, FlashOn } from "@mui/icons-material"; // Icons
-
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 function Scheme() {
   const isDesktop = useMediaQuery("(max-width: 1496px)");
-const benefits = [
-  {
-    icon: <Star sx={{ color: "#A61E20" }} />,
-    title: "Cube Portal",
-    description:
-      "Gorgeous, high-quality design system for mobile, tablet & desktop devices a few reasons",
-  },
-  {
-    icon: <Shield sx={{ color: "#A61E20" }} />,
-    title: "Cube App",
-    description:
-      "Gorgeous, high-quality design system for mobile, tablet & desktop devices a few reasons",
-  },
-  {
-    icon: <FlashOn sx={{ color: "#A61E20" }} />,
-    title: "Cube Videos",
-    description:
-      "Gorgeous, high-quality design system for mobile, tablet & desktop devices a few reasons",
-  },
-];
+  const { ref, inView } = useInView({
+    triggerOnce: true, // only trigger once
+    threshold: 0.3, // 30% of the element should be visible
+  });
+  const benefits = [
+    {
+      icon: <Star sx={{ color: "#A61E20" }} />,
+      title: "Cube Portal",
+      description:
+        "Gorgeous, high-quality design system for mobile, tablet & desktop devices a few reasons",
+    },
+    {
+      icon: <Shield sx={{ color: "#A61E20" }} />,
+      title: "Cube App",
+      description:
+        "Gorgeous, high-quality design system for mobile, tablet & desktop devices a few reasons",
+    },
+    {
+      icon: <FlashOn sx={{ color: "#A61E20" }} />,
+      title: "Cube Videos",
+      description:
+        "Gorgeous, high-quality design system for mobile, tablet & desktop devices a few reasons",
+    },
+  ];
   return (
     <div>
       <Hero
@@ -70,7 +75,7 @@ const benefits = [
           alignItems: "center",
           marginLeft: "150px",
           gap: 8,
-          marginTop:"100px"
+          marginTop: "100px",
         }}
       >
         {/* Left Section - Text */}
@@ -146,88 +151,99 @@ const benefits = [
           </Button>
         </Box>
 
-        {/* Right Section - Image */}
         <Box component="img" src={TabImage} alt="Dashboard UI" />
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 25, px: 30, marginTop:"130px", width:"100%", marginBottom:"150px" }}>
-              <Box>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontWeight: "bold",
-                    color: "#A61E20",
-                    fontFamily: "Urbanist, sans-serif",
-                  }}
-                >
-                  Client
-                </Typography>
-                <Typography
-                  variant="h5"
-                  sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif", width:"250px" }}
-                >
-                  Satisfaction Score
-                </Typography>
-              </Box>
-      
-              {/* Stats Section */}
-              <Grid container spacing={12} alignItems="center">
-                {/* First Stat */}
-                <Grid item>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
-                  >
-                    500 +
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#777",
-                      fontSize: "14px",
-                      fontFamily: "Urbanist, sans-serif",
-                    }}
-                  >
-                    Efficient Schedules <br /> Created
-                  </Typography>
-                </Grid>
-      
-                <Grid item>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
-                  >
-                    120 M
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#777",
-                      fontSize: "14px",
-                      fontFamily: "Urbanist, sans-serif",
-                    }}
-                  >
-                    Tasks Organized and <br /> Completed
-                  </Typography>
-                </Grid>
-      
-                {/* Third Stat */}
-                <Grid item>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
-                  >
-                    98 %
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#777",
-                      fontSize: "14px",
-                      fontFamily: "Urbanist, sans-serif",
-                    }}
-                  >
-                    Exceptional User <br /> Satisfaction Rate
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Box>
+      <Box
+        ref={ref}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 25,
+          px: 30,
+          marginTop: "100px",
+          width: "100%",
+          marginBottom: "150px",
+        }}
+      >
+        <Box>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              color: "#A61E20",
+              fontFamily: "Urbanist, sans-serif",
+            }}
+          >
+            Client
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: "bold",
+              fontFamily: "Urbanist, sans-serif",
+              width: "250px",
+            }}
+          >
+            Satisfaction Score
+          </Typography>
+        </Box>
+
+        <Grid container spacing={12} alignItems="center">
+          <Grid item>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
+            >
+              {inView && <CountUp end={500} duration={2} />} +
+            </Typography>
+            <Typography
+              sx={{
+                color: "#777",
+                fontSize: "14px",
+                fontFamily: "Urbanist, sans-serif",
+              }}
+            >
+              Efficient Schedules <br /> Created
+            </Typography>
+          </Grid>
+
+          <Grid item>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
+            >
+              {inView && <CountUp end={120} duration={2} />} M
+            </Typography>
+            <Typography
+              sx={{
+                color: "#777",
+                fontSize: "14px",
+                fontFamily: "Urbanist, sans-serif",
+              }}
+            >
+              Tasks Organized and <br /> Completed
+            </Typography>
+          </Grid>
+
+          <Grid item>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: "bold", fontFamily: "Urbanist, sans-serif" }}
+            >
+              {inView && <CountUp end={98} duration={2} />} %
+            </Typography>
+            <Typography
+              sx={{
+                color: "#777",
+                fontSize: "14px",
+                fontFamily: "Urbanist, sans-serif",
+              }}
+            >
+              Exceptional User <br /> Satisfaction Rate
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
       <Footer />
     </div>
   );
